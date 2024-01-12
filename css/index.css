@@ -71,3 +71,7 @@
 .attribution a {
   @apply text-attribution;
 }
+
+.form-invalid {
+  @apply border-2 border-red;
+}

@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "npx tailwindcss -i ./css/index.css -o ./dist/css/index.css",
-    "watch": "npx tailwindcss -i ./css/index.css -o ./dist/css/index.css --watch"
+    "build": "tsc && npx tailwindcss -i ./css/index.css -o ./dist/css/index.css",
+    "watch:style": "npx tailwindcss -i ./css/index.css -o ./dist/css/index.css --watch",
+    "watch:ts": "tsc --watch"
   },
   "keywords": [],
   "author": "",

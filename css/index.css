@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.hamburger {
+  @apply overflow-visible inline-block m-0 border-0 bg-transparent cursor-pointer transition-all;
+}
+
+.hamburger:hover {
+  @apply opacity-70;
+}
+
+.hamburger.is-active:hover {
+  @apply opacity-70;
+}
+
+.hamburger.is-active .hamburger-inner,
+.hamburger.is-active .hamburger-inner::before,
+.hamburger.is-active .hamburger-inner::after {
+  @apply bg-custom-gray;
+}
+
+.hamburger-box {
+  @apply relative inline-block w-[35px] h-6;
+}
+
+.hamburger-inner {
+  @apply top-2/4 block -mt-[2px];
+}
+
+.hamburger-inner,
+.hamburger-inner::before,
+.hamburger-inner::after {
+  @apply absolute w-[35px] h-1 bg-custom-gray rounded transition-transform;
+}
+
+.hamburger-inner::before,
+.hamburger-inner::after {
+  @apply content-[''] block;
+}
+
+.hamburger-inner::before {
+  @apply -top-[10px];
+}
+
+.hamburger-inner::after {
+  @apply -bottom-[10px];
+}
+
+.hamburger--slider .hamburger-inner {
+  @apply top-[2px] before:top-[10px] before:transition-all after:top-5;
+}
+
+.hamburger--slider.is-active .hamburger-inner {
+  transform: translate3d(0, 10px, 0) rotate(45deg);
+}
+
+.hamburger--slider.is-active .hamburger-inner::before {
+  transform: rotate(-45deg) translate3d(-5.71429px, -6px, 0);
+  opacity: 0;
+}
+
+.hamburger--slider.is-active .hamburger-inner::after {
+  transform: translate3d(0, -20px, 0) rotate(-90deg);
+}
+
+.attribution {
+  @apply text-[11px] text-center;
+}
+
+.attribution a {
+  @apply text-attribution;
+}

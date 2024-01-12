@@ -1,0 +1,19 @@
+{
+  "name": "url-shortening-api-landing-page",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "npx tailwindcss -i ./css/index.css -o ./dist/css/index.css",
+    "watch": "npx tailwindcss -i ./css/index.css -o ./dist/css/index.css --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.33",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5.3.3"
+  }
+}

@@ -1236,6 +1236,7 @@ video {
 }
 
 .link-card {
+  position: relative;
   display: flex;
   flex-direction: column;
 }
@@ -1349,6 +1350,32 @@ video {
 
 .copy-btn:hover {
   --tw-bg-opacity: 0.6;
+}
+
+.copy-btn.copied {
+  --tw-bg-opacity: 1;
+  background-color: hsl(257 27% 26% / var(--tw-bg-opacity));
+}
+
+.remove-btn {
+  position: absolute;
+  top: -0.625rem;
+  right: -0.75rem;
+  height: 1.75rem;
+  width: 1.75rem;
+  border-radius: 9999px;
+  --tw-bg-opacity: 1;
+  background-color: hsl(257 7% 63% / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.remove-btn:hover {
+  --tw-text-opacity: 1;
+  color: hsl(260 8% 14% / var(--tw-text-opacity));
 }
 
 .hover\:bg-opacity-60:hover {

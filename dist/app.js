@@ -81,6 +81,7 @@ async function shortenUrl(longUrl) {
         }
         const result = await response.json();
         const newLinks = {
+            id: result.id,
             long: result.long_url,
             short: result.link,
         };
@@ -111,11 +112,16 @@ function createShortenUrl(link) {
         ${link.short}
       </a>
       <button type="button" class="copy-btn">Copy</button>
+      <button type="button" class="remove-btn">X</button>
     </div>
       `;
     linksContainer.classList.remove('hidden');
     const firstChild = linksContainer.firstChild;
     linksContainer.insertBefore(div, firstChild);
+    const copyBtn = document.querySelector('.copy-btn');
+    copyBtn?.addEventListener('click', (event) => copyLink(event, link.short));
+    const removeBtn = document.querySelector('.remove-btn');
+    removeBtn?.addEventListener('click', () => removeLink(link.id, div));
 }
 function saveShortenUrl() {
     localStorage.setItem('links', JSON.stringify(links));
@@ -123,4 +129,25 @@ function saveShortenUrl() {
 function displayShortenUrl() {
     const links = localStorage.getItem('links');
     return links ? JSON.parse(links) : [];
+}
+async function copyLink(event, link) {
+    try {
+        await navigator.clipboard.writeText(link);
+        const element = event.target;
+        element.classList.add('copied');
+        element.textContent = 'Copied!';
+    }
+    catch (error) {
+        alert('Unable to copy to clipboard.');
+    }
+}
+function removeLink(id, element) {
+    const index = links.findIndex(link => link.id === id);
+    if (index < 0)
+        return;
+    links.splice(index, 1);
+    element.remove();
+    saveShortenUrl();
+    if (linksContainer.children.length === 0)
+        linksContainer.classList.add('hidden');
 }

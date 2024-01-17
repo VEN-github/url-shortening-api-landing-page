@@ -72,6 +72,42 @@
   @apply text-attribution;
 }
 
+.form-input {
+  @apply w-full py-3 px-4 text-sm outline-none bg-white rounded-lg shadow-lg transition-all;
+}
+
+.form-input.disabled {
+  @apply bg-opacity-60;
+}
+
 .form-invalid {
   @apply border-2 border-red;
+}
+
+.submit-btn {
+  @apply bg-cyan w-full text-white outline-none border-0 rounded-lg py-2.5 px-8 transition-all hover:bg-opacity-60;
+}
+
+.submit-btn.disabled {
+  @apply disabled:bg-opacity-60;
+}
+
+.link-card {
+  @apply flex flex-col py-5 divide-y-2 bg-white rounded-md shadow-sm md:flex-row md:justify-between md:items-center md:divide-y-0 md:px-8;
+}
+
+.long-url {
+  @apply truncate px-6 pb-3 max-w-xs transition-opacity hover:opacity-60 md:p-0;
+}
+
+.short-url {
+  @apply text-cyan transition-opacity hover:opacity-60;
+}
+
+.action-container {
+  @apply flex flex-col pt-3 px-6 gap-3 md:flex-row md:items-center md:p-0 md:gap-4;
+}
+
+.copy-btn {
+  @apply bg-cyan px-6 py-2 text-white outline-none border-0 rounded-lg transition-all hover:bg-opacity-60;
 }

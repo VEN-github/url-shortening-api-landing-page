@@ -97,7 +97,7 @@
                   type="text"
                   name="link-input"
                   id="link-input"
-                  class="w-full py-3 px-4 text-sm outline-none bg-white rounded-lg shadow-lg transition-all"
+                  class="form-input"
                   placeholder="Shorten a link here..."
                 />
                 <p
@@ -106,12 +106,7 @@
                 ></p>
               </div>
               <div>
-                <button
-                  type="submit"
-                  class="bg-cyan w-full text-white outline-none border-0 rounded-lg py-2.5 px-8 transition-all hover:bg-opacity-60"
-                >
-                  Shorten it!
-                </button>
+                <button id="shorten-btn" type="submit" class="submit-btn">Shorten it!</button>
               </div>
             </form>
           </div>
@@ -119,29 +114,7 @@
       </section>
       <section class="bg-custom-gray-light">
         <div class="container mx-auto px-8 xl:px-44">
-          <div class="pt-24 space-y-5">
-            <div
-              class="flex flex-col py-5 divide-y-2 bg-white rounded-md shadow-sm md:flex-row md:justify-between md:items-center md:divide-y-0 md:px-8"
-            >
-              <p class="truncate px-6 pb-3 max-w-xs md:p-0">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur rerum
-                exercitationem incidunt ipsa nulla perspiciatis est accusamus? Non dolore
-                consequuntur quaerat quia reiciendis nobis blanditiis, natus odio fuga, voluptatem
-                harum.
-              </p>
-              <div
-                class="flex flex-col pt-3 px-6 gap-3 md:flex-row md:items-center md:p-0 md:gap-4"
-              >
-                <p class="text-cyan">link here</p>
-                <button
-                  type="button"
-                  class="bg-cyan px-6 py-2 text-white outline-none border-0 rounded-lg transition-all hover:bg-opacity-60"
-                >
-                  Copy
-                </button>
-              </div>
-            </div>
-          </div>
+          <div id="links-container" class="pt-24 space-y-5 hidden"></div>
           <div class="pt-36 pb-20">
             <h1 class="mb-5 text-3xl font-bold text-violet-medium text-center lg:text-4xl">
               Advanced Statistics

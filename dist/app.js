@@ -4,12 +4,18 @@ const linkInput = document.getElementById('link-input');
 const shortenBtn = document.getElementById('shorten-btn');
 const invalidMsg = document.getElementById('invalid-msg');
 const linksContainer = document.getElementById('links-container');
+const menuBtn = document.getElementById('hamburger-btn');
+const menu = document.getElementById('menu');
 const API_TOKEN = '28e395216c2b9927cbcfc41c0c58990b65d2cf22';
 const API_URL = 'https://api-ssl.bitly.com/v4/shorten';
 let timeout;
 const links = displayShortenUrl();
 links.forEach(createShortenUrl);
 form.addEventListener('submit', submitForm);
+menuBtn.addEventListener('click', () => {
+    menuBtn.classList.toggle('is-active');
+    menu.classList.toggle('hidden');
+});
 function submitForm(event) {
     event.preventDefault();
     clearTimeout(timeout);
